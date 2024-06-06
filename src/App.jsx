@@ -10,6 +10,7 @@ import KidsComp from "./Components/KidsComp";
 import Cart from "./Components/Cart";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
+import Footer from "./Components/Footer";
 
 const App = () => {
   faker.seed(5);
@@ -33,8 +34,8 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
       </Routes>
-
       <Navfooter />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -5,6 +5,7 @@ import Popular from "./Popular/Popular";
 import Offer from "./OfferBanner";
 import NewCollection from "./NewCollection/NewCollection";
 import Exclusive from "./Exclusive";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Offer />
       <NewCollection />
       <Exclusive />
+      <Footer />
     </div>
   );
 };
