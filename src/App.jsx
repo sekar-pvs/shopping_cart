@@ -4,13 +4,14 @@ import { faker } from "@faker-js/faker";
 import Navbar from "./Components/Navbar";
 import Navfooter from "./Components/Navfooter";
 import { Route, Routes } from "react-router-dom";
-import MensComp from "./Components/MensComp";
-import WomensComp from "./Components/WomensComp";
-import KidsComp from "./Components/KidsComp";
 import Cart from "./Components/Cart";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
-import Footer from "./Components/Footer";
+import ShopCategori from "./Components/ShopCategori";
+import menBanner from "./Components/Assets/banner_mens.png";
+import womenBanner from "./Components/Assets/banner_women.png";
+import kidBanner from "./Components/Assets/banner_kids.png";
+import Product from "./Components/Product";
 
 const App = () => {
   faker.seed(5);
@@ -28,14 +29,26 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/mens" element={<MensComp />} />
-        <Route path="/womens" element={<WomensComp />} />
-        <Route path="/kids" element={<KidsComp />} />
+        <Route
+          path="/mens"
+          element={<ShopCategori category="men" banner={menBanner} />}
+        />
+        <Route
+          path="/womens"
+          element={<ShopCategori category="women" banner={womenBanner} />}
+        />
+        <Route
+          path="/kids"
+          element={<ShopCategori category="kid" banner={kidBanner} />}
+        />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/product" element={<Product />}>
+          <Route path=":productId" element={<Product />} />
+        </Route>
       </Routes>
+
       <Navfooter />
-      {/* <Footer /> */}
     </div>
   );
 };

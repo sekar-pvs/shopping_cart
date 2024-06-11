@@ -4,16 +4,17 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import Context from "./context/Context";
+//import Context from "./context/Context";
 import { BrowserRouter } from "react-router-dom";
+import ShopContext from "./Components/Context/ShopContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Context>
+      <ShopContext>
         <App className="h-screen" />
-      </Context>
+      </ShopContext>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,7 +1,6 @@
 import React from "react";
 import new_collection from "../Assets/new_collections";
 //import PopularCart from "../Popular/PopularCart";
-import NewColl_Cart from "./NewColl_Cart";
 
 const NewCollection = () => {
   console.log(new_collection);

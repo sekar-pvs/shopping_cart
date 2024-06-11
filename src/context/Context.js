@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const Cart = createContext();
+export const Cart = createContext();
 
 const Context = ({ children }) => {
   return <Cart.Provider>{children}</Cart.Provider>;

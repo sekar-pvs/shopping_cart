@@ -4,6 +4,8 @@ import whats from "./Assets/whatsapp_icon.png";
 import printrest from "./Assets/pintester_icon.png";
 
 const Footer = () => {
+  const date = new Date();
+  // let year = date.getFullYear();
   return (
     <div className=" space-y-6 text-center mb-4 ">
       <div className=" flex justify-center items-center text-center ">
@@ -28,6 +30,7 @@ const Footer = () => {
         <img src={insta} alt="" />
         <img src={printrest} alt="" />
       </div>
+      <div>Copyright &copy; {date.getFullYear()}</div>
     </div>
   );
 };

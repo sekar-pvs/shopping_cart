@@ -37,7 +37,7 @@ const Navbar = () => {
                     setHr("home");
                   }}
                 >
-                  Home
+                  Shop
                 </button>{" "}
               </Link>
               {hr === "home" ? <hr /> : <></>}
