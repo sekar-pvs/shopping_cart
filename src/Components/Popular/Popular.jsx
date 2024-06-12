@@ -1,6 +1,7 @@
 import React from "react";
 import data_product from "../Assets/data";
 import PopularCart from "./PopularCart";
+import { Link } from "react-router-dom";
 
 const Popular = () => {
   return (
@@ -15,7 +16,14 @@ const Popular = () => {
           {data_product.map((data) => {
             return (
               <div>
-                <PopularCart key={data.id} data={data} />
+                <Link
+                  to={`/product/${data.id}`}
+                  onClick={() => {
+                    window.scroll(0, 0);
+                  }}
+                >
+                  <PopularCart key={data.id} data={data} />
+                </Link>
               </div>
             );
           })}

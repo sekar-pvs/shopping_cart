@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Exclusive = () => {
+  const [mail, setMail] = useState(" ");
+  const handelMail = (e) => {
+    setMail(e.target.value);
+    //setMail("");
+  };
+  const handelMailButton = () => {
+    if (!mail) {
+      alert("Please enter the mail");
+    } else {
+      alert(`sucessfully subscribed to  ${mail}`);
+      setMail();
+    }
+  };
   return (
     <div className="h-screen flex justify-center items-center  ">
       <div className="bg-gradient-to-br from-purple-300 to-white h-[70%] w-[70%] space-y-4">
@@ -15,11 +28,14 @@ const Exclusive = () => {
             <input
               type="text"
               placeholder="Your Mail Id..."
-              className="h-12 w-full rounded-xl "
+              className="h-12 w-full rounded-xl  "
+              onChange={handelMail}
+              value={mail}
             />
           </div>
+
           <div className="font-medium text-xl bg-red-500 p-2 rounded-xl text-white">
-            <button>subscribe</button>
+            <button onClick={handelMailButton}>subscribe</button>
           </div>
         </div>
       </div>

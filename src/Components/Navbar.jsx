@@ -43,7 +43,7 @@ const Navbar = () => {
               {hr === "home" ? <hr /> : <></>}
             </li>
             <li className="hover:scale-125 transition duration-75 ">
-              <Link to={"mens"}>
+              <Link to={"men"}>
                 <button
                   onClick={() => {
                     setHr("men");
@@ -55,7 +55,7 @@ const Navbar = () => {
               {hr === "men" ? <hr /> : <></>}
             </li>
             <li className="hover:scale-125 transition duration-75 ">
-              <Link to={`/womens`}>
+              <Link to={`/women`}>
                 <button
                   onClick={() => {
                     setHr("women");
@@ -67,7 +67,7 @@ const Navbar = () => {
               {hr === "women" ? <hr /> : <></>}
             </li>
             <li className="hover:scale-125 transition duration-75 ">
-              <Link to={`/kids`}>
+              <Link to={`/kid`}>
                 <button
                   onClick={() => {
                     setHr("kid");

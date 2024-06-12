@@ -30,15 +30,15 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
-          path="/mens"
+          path="/men"
           element={<ShopCategori category="men" banner={menBanner} />}
         />
         <Route
-          path="/womens"
+          path="/women"
           element={<ShopCategori category="women" banner={womenBanner} />}
         />
         <Route
-          path="/kids"
+          path="/kid"
           element={<ShopCategori category="kid" banner={kidBanner} />}
         />
         <Route path="/cart" element={<Cart />} />

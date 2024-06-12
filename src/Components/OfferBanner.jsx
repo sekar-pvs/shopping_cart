@@ -1,5 +1,6 @@
 import React from "react";
 import exclusive_img from "./Assets/exclusive_image.png";
+import { Link } from "react-router-dom";
 const OfferBanner = () => {
   return (
     <div className="text-center flex justify-center items-center h-full">
@@ -12,7 +13,9 @@ const OfferBanner = () => {
             <div>ONLY ON BEST SELLERS PRODUCTS</div>
             <div>
               <button className=" border-2 p-2 bg-red-500 rounded-xl text-white hover:scale-105 transition">
-                Check Now
+                <Link to="/women" onClick={() => window.scroll(0, 0)}>
+                  Check Now
+                </Link>
               </button>
             </div>
           </div>
