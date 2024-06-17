@@ -7,9 +7,9 @@ import ProductDisplay from "./ProductDisplay";
 const Product = () => {
   const { data } = useContext(ShopData);
   const { productId } = useParams();
-  console.log(productId);
+  // console.log(productId);
   const Product = data.find((e) => e.id === Number(productId));
-  console.log(Product);
+  //console.log(Product);
 
   return (
     <div className="h-screen space-y-10">

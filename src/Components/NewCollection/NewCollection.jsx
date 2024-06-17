@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //import PopularCart from "../Popular/PopularCart";
 
 const NewCollection = () => {
-  console.log(new_collection);
+  //console.log(new_collection);
   return (
     <div>
       <div className=" text-center text-4xl font-bold underline">
@@ -18,6 +18,7 @@ const NewCollection = () => {
               onClick={() => {
                 window.scroll(0, 0);
               }}
+              key={data.id}
             >
               <div className="  bg-gradient-to-b from-purple-300 to-white text-black w-fit  rounded-2xl shadow-2xl  hover:scale-105 transition">
                 <div className="flex justify-center p-3 ">

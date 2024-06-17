@@ -1,5 +1,4 @@
 import React from "react";
-import { faker } from "@faker-js/faker";
 //import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
 import Navfooter from "./Components/Navfooter";
@@ -14,15 +13,6 @@ import kidBanner from "./Components/Assets/banner_kids.png";
 import Product from "./Components/Product";
 
 const App = () => {
-  faker.seed(5);
-  const arr = [...Array(5)].map(() => ({
-    f: faker.person.firstName(),
-    music: faker.music.songName(),
-    image: faker.image.url(),
-  }));
-  console.log(arr);
-  /*  let arr = faker.person.firstName();
-  console.log(arr); */
   return (
     <div className="h-screen  ">
       <Navbar />

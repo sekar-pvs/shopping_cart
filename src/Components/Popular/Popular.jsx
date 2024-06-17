@@ -15,7 +15,7 @@ const Popular = () => {
         <div className="space-y-2 flex justify-center items-center space-x-2 ">
           {data_product.map((data) => {
             return (
-              <div>
+              <div key={data.id}>
                 <Link
                   to={`/product/${data.id}`}
                   onClick={() => {

@@ -33,7 +33,7 @@ const LandingPage = () => {
       </div>
 
       {/* right */}
-      <div className=" object-left">
+      <div className=" object-left ">
         <div>
           <img src={logoImg} alt="" className="w-[60%] " />
         </div>

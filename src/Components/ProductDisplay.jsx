@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import dullStar from "./Assets/star_dull_icon.png";
 import star from "./Assets/star_icon.png";
+import { ShopData } from "./Context/ShopContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductDisplay = ({ data }) => {
+  const { cart, setCart } = useContext(ShopData);
+  const handelCartButton = () => {
+    setCart([...cart, data]);
+    toast.success("Sucessfully Added to Cart");
+  };
+  console.log(cart, "cart");
   return (
     <div className=" m-3 flex justify-around  h-screen ">
       {/*  left align */}
@@ -44,6 +53,7 @@ const ProductDisplay = ({ data }) => {
           <div className=" line-through font-thin">${data.old_price} </div>
           <div className=" text-orange-600 font-bold ">${data.new_price} </div>
         </div>
+
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ea
           nesciunt adipisci dolore explicabo impedit unde vel ex modi. Ullam
@@ -71,9 +81,13 @@ const ProductDisplay = ({ data }) => {
           </div>
         </div>
         <div>
-          <span className="booder-2 bg-orange-500 p-3 text-white ">
+          <button
+            className="booder-2 bg-orange-500 p-3 text-white hover:scale-105 "
+            onClick={handelCartButton}
+          >
             ADD TO CART
-          </span>
+          </button>
+          <ToastContainer />
         </div>
       </div>
     </div>
