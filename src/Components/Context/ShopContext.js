@@ -7,9 +7,14 @@ export const ShopData = createContext({});
 const ShopContext = ({ children }) => {
   const data = all_product;
   // Add to Cart Variable and imort in ProductDisplay.jsx
-  const [cart, setCart] = useState([]);
+  const [cartItem, setCartItem] = useState([]);
+  //console.log(cart);
+  //Size variable to set background
+  const [sizeBG, setSizeBg] = useState("");
   return (
-    <ShopData.Provider value={{ data, cart, setCart }}>
+    <ShopData.Provider
+      value={{ data, cartItem, setCartItem, sizeBG, setSizeBg }}
+    >
       {children}
     </ShopData.Provider>
   );

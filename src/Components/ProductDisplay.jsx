@@ -6,12 +6,14 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ProductDisplay = ({ data }) => {
-  const { cart, setCart } = useContext(ShopData);
+  const { cartItem, setCartItem, sizeBG, setSizeBg } = useContext(ShopData);
   const handelCartButton = () => {
-    setCart([...cart, data]);
+    window.scroll(0, 0);
+    setCartItem([...cartItem, data]);
     toast.success("Sucessfully Added to Cart");
   };
-  console.log(cart, "cart");
+
+  //console.log(cartItem);
   return (
     <div className=" m-3 flex justify-around  h-screen ">
       {/*  left align */}
@@ -62,30 +64,91 @@ const ProductDisplay = ({ data }) => {
         <div className="space-y-2">
           <div className="font-semibold">Select Size</div>
 
-          <div className="space-x-5 flex ">
-            <div className="border-2 p-2">
-              <button>S</button>
+          <div className={"space-x-5 flex "}>
+            <div
+              className={`${
+                sizeBG === "S" ? "bg-orange-500 text-white" : "bg-white"
+              } border-2   text-center`}
+            >
+              <button
+                className="p-2 w-16"
+                onClick={() => {
+                  setSizeBg("S");
+                }}
+              >
+                S
+              </button>
             </div>
-            <div className="border-2 p-2">
-              <button>M</button>
+            <div
+              className={`${
+                sizeBG === "M" ? "bg-orange-500 text-white" : "bg-white"
+              } border-2  text-center`}
+            >
+              <button
+                className="p-2 w-16"
+                onClick={() => {
+                  setSizeBg("M");
+                }}
+              >
+                M
+              </button>
             </div>
-            <div className="border-2 p-2">
-              <button>L</button>
+            <div
+              className={`${
+                sizeBG === "L" ? "bg-orange-500 text-white" : "bg-white"
+              } border-2 text-center`}
+            >
+              <button
+                className="p-2  w-16 "
+                onClick={() => {
+                  setSizeBg("L");
+                }}
+              >
+                L
+              </button>
             </div>
-            <div className="border-2 p-2">
-              <button>XL</button>
+            <div
+              className={`${
+                sizeBG === "XL" ? "bg-orange-500 text-white" : "bg-white"
+              } border-2  text-center`}
+            >
+              <button
+                className="p-2  w-16  "
+                onClick={() => {
+                  setSizeBg("XL");
+                }}
+              >
+                XL
+              </button>
             </div>
-            <div className="border-2 p-2">
-              <button>XXL</button>
+            <div
+              className={`${
+                sizeBG === "XXL" ? "bg-orange-500 text-white" : "bg-white"
+              } border-2  text-center`}
+            >
+              <button
+                className="p-2  w-16 "
+                onClick={() => {
+                  setSizeBg("XXL");
+                }}
+              >
+                XXL
+              </button>
             </div>
           </div>
         </div>
-        <div>
+        <div className="flex  justify-around">
           <button
-            className="booder-2 bg-orange-500 p-3 text-white hover:scale-105 "
+            className="booder-2 bg-orange-500  text-white p-3  hover:scale-105 "
             onClick={handelCartButton}
           >
             ADD TO CART
+          </button>
+          <button
+            className="booder-2 bg-orange-500 p-3 text-white font-bold hover:scale-105 "
+            /* onClick={handelCartButton} */
+          >
+            Order Now
           </button>
           <ToastContainer />
         </div>

@@ -22,7 +22,7 @@ const ShopCategori = ({ category, banner }) => {
       <div className=" grid grid-cols-4 space-y-10 ml-10 space-x-4">
         {data.map((data) => {
           if (data.category === category) {
-            return <Card data={data} />;
+            return <Card data={data} key={data.id} />;
           } else {
             return null;
           }

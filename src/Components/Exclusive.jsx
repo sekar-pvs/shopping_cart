@@ -11,8 +11,8 @@ const Exclusive = () => {
       alert("Please enter the mail");
     } else {
       alert(`sucessfully subscribed to  ${mail}`);
-      setMail();
     }
+    setMail("");
   };
   return (
     <div className="h-screen flex justify-center items-center  ">
