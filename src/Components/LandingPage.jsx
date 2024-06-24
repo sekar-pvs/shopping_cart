@@ -21,8 +21,12 @@ const LandingPage = () => {
         <div className="text-5xl">collections </div>
         <div className="text-5xl">for eveyone</div>
         <div className="text-2xl space-y-2 p-2 boreder border-2  border-white bg-red-500 text-white rounded-3xl hover:scale-105 transition  text-center flex space-x-3  ">
-          <div>
-            <Link to="/">
+          <div
+            onClick={() => {
+              window.scroll(0, 0);
+            }}
+          >
+            <Link to="/men">
               <button className=" ">Latest Collections </button>{" "}
             </Link>
           </div>

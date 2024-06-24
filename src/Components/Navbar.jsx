@@ -98,9 +98,9 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <div className="font-semibold text-xl border-2 p-2 rounded-full w-24 text-center hover:scale-105 transition ">
-        <Link to="/login">
-          <button>Login</button>
+      <div className="font-semibold text-xl border-2 p-1 rounded-full w-24 text-center hover:scale-105 transition ">
+        <Link to="/signup">
+          <button>Sign up</button>
         </Link>
       </div>
     </div>

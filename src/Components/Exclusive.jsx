@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 
+import { ToastContainer, toast } from "react-toastify";
+
 const Exclusive = () => {
   const [mail, setMail] = useState(" ");
   const handelMail = (e) => {
     setMail(e.target.value);
-    //setMail("");
   };
   const handelMailButton = () => {
     if (!mail) {
-      alert("Please enter the mail");
+      toast.error("Please enter the mail");
     } else {
-      alert(`sucessfully subscribed to  ${mail}`);
+      toast.success(`Now we are connect together`);
     }
     setMail("");
   };
@@ -39,6 +40,7 @@ const Exclusive = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

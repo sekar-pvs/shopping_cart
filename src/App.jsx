@@ -11,6 +11,7 @@ import menBanner from "./Components/Assets/banner_mens.png";
 import womenBanner from "./Components/Assets/banner_women.png";
 import kidBanner from "./Components/Assets/banner_kids.png";
 import Product from "./Components/Product";
+import Signup from "./Components/Signup";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
           element={<ShopCategori category="kid" banner={kidBanner} />}
         />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/product" element={<Product />}>
           <Route path=":productId" element={<Product />} />
