@@ -65,6 +65,11 @@ const CartTotal = ({ data }) => {
             Apply Now
           </button>
         </div>
+        <div className="">
+          <button className="h-full border-2 p-2 bg-orange-500 text-white">
+            Place Order
+          </button>
+        </div>
       </div>
     </div>
   );

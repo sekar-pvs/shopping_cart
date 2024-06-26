@@ -4,6 +4,7 @@ import star from "./Assets/star_icon.png";
 import { ShopData } from "./Context/ShopContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+//import { Link } from "react-router-dom";
 
 const ProductDisplay = ({ data }) => {
   const { cartItem, setCartItem, sizeBG, setSizeBg } = useContext(ShopData);
@@ -15,7 +16,7 @@ const ProductDisplay = ({ data }) => {
 
   //console.log(cartItem);
   return (
-    <div className=" m-3 flex justify-around  h-screen ">
+    <div className=" m-3 flex justify-around  ">
       {/*  left align */}
       <div className="flex space-x-5 ">
         <div className="w-28 space-y-2">
@@ -144,12 +145,14 @@ const ProductDisplay = ({ data }) => {
           >
             ADD TO CART
           </button>
+
           <button
             className="booder-2 bg-orange-500 p-3 text-white font-bold hover:scale-105 "
             /* onClick={handelCartButton} */
           >
             Order Now
           </button>
+
           <ToastContainer />
         </div>
       </div>

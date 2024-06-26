@@ -12,6 +12,7 @@ import womenBanner from "./Components/Assets/banner_women.png";
 import kidBanner from "./Components/Assets/banner_kids.png";
 import Product from "./Components/Product";
 import Signup from "./Components/Signup";
+import Order from "./Components/Order";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/product" element={<Product />}>
           <Route path=":productId" element={<Product />} />
         </Route>
+        <Route path="/order" element={<Order />} />
       </Routes>
 
       <Navfooter />

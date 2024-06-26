@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import BreadCrums from "./BreadCrums";
 import { ShopData } from "./Context/ShopContext";
 import ProductDisplay from "./ProductDisplay";
-
+import NewCollection from "./NewCollection/NewCollection";
 const Product = () => {
   const { data } = useContext(ShopData);
   const { productId } = useParams();
@@ -15,7 +15,7 @@ const Product = () => {
     <div className="h-screen space-y-10">
       <BreadCrums data={Product} />
       <ProductDisplay data={Product} />
-      <div>Recommended</div>
+      <NewCollection />
     </div>
   );
 };

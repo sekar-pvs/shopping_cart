@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IoHomeOutline } from "react-icons/io5";
 import { IoMdMan } from "react-icons/io";
 import { IoMdWoman } from "react-icons/io";
 import { TbMoodKidFilled } from "react-icons/tb";
