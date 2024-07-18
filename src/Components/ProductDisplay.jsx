@@ -4,7 +4,6 @@ import star from "./Assets/star_icon.png";
 import { ShopData } from "./Context/ShopContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//import { Link } from "react-router-dom";
 
 const ProductDisplay = ({ data }) => {
   const { cartItem, setCartItem, sizeBG, setSizeBg } = useContext(ShopData);
@@ -16,10 +15,10 @@ const ProductDisplay = ({ data }) => {
 
   //console.log(cartItem);
   return (
-    <div className=" m-3 flex justify-around  ">
+    <div className=" m-3 md:flex justify-around  ">
       {/*  left align */}
       <div className="flex space-x-5 ">
-        <div className="w-28 space-y-2">
+        <div className="md:w-28 w-36  space-y-2">
           <div>
             <img src={data.image} alt="" />
           </div>
@@ -34,14 +33,14 @@ const ProductDisplay = ({ data }) => {
           <img
             src={data.image}
             alt=""
-            className="w-full shadow-2xl rounded-xl"
+            className="md:w-full w-96 shadow-2xl rounded-xl"
           />
         </div>
         <div></div>
       </div>
       {/*  right align */}
 
-      <div className="space-y-4 w-1/2">
+      <div className="space-y-4 md:w-1/2">
         <div className="">
           <div className="font-bold text-3xl">{data.name}</div>
           <div className="flex mt-4">
@@ -65,7 +64,7 @@ const ProductDisplay = ({ data }) => {
         <div className="space-y-2">
           <div className="font-semibold">Select Size</div>
 
-          <div className={"space-x-5 flex "}>
+          <div className={"space-x-5 flex flex-nowrap overflow-y-auto "}>
             <div
               className={`${
                 sizeBG === "S" ? "bg-orange-500 text-white" : "bg-white"
@@ -138,16 +137,16 @@ const ProductDisplay = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="flex  justify-around">
+        <div className="md:flex  justify-around space-x-5">
           <button
-            className="booder-2 bg-orange-500  text-white p-3  hover:scale-105 "
+            className="booder-2 bg-orange-500 p-3 text-white font-bold  hover:scale-105 w-40 md:w-auto h-14"
             onClick={handelCartButton}
           >
             ADD TO CART
           </button>
 
           <button
-            className="booder-2 bg-orange-500 p-3 text-white font-bold hover:scale-105 "
+            className="booder-2 bg-orange-500 p-3 text-white font-bold hover:scale-105 w-40 md:w-auto h-14 "
             /* onClick={handelCartButton} */
           >
             Order Now

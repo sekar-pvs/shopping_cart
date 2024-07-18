@@ -3,6 +3,7 @@ import { ShopData } from "./Context/ShopContext";
 import Card from "./Card";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import Footer from "./Footer";
+import Navfooter from "./Navfooter";
 
 const ShopCategori = ({ category, banner }) => {
   const { data } = useContext(ShopData);
@@ -31,15 +32,17 @@ const ShopCategori = ({ category, banner }) => {
         <img src={banner} alt="" />
       </div>
       <div className=" ml-10 mr-10 flex justify-between ">
-        <div className="font-bold text-xl font-serif">Happy To Purchase</div>
+        <div className="font-bold text-sm md:text-xl font-serif">
+          Happy To Purchase
+        </div>
         <div>
           <button
-            className="border-2 p-2 rounded-full flex text-center gap-2"
+            className="border-2 p-2 rounded-full flex text-center  gap-2"
             onClick={() => {
               setOpenSort(!openSort);
             }}
           >
-            Sort by <RiArrowDropDownLine />
+            Sort by <RiArrowDropDownLine className="text-center" />
           </button>
           <div className={`${openSort ? "block" : "hidden"} space-y-3`}>
             <div>
@@ -73,7 +76,7 @@ const ShopCategori = ({ category, banner }) => {
           </div>
         </div>
       </div>
-      <div className=" grid grid-cols-4 space-y-10 ml-10 space-x-4">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 space-y-10 w-96 md:w-auto md:ml-5 space-x-4 p-5">
         {DataItem.map((data) => {
           if (data.category === category) {
             return <Card data={data} key={data.id} />;
@@ -83,6 +86,9 @@ const ShopCategori = ({ category, banner }) => {
         })}
       </div>
       <Footer />
+      <div className="sticky bottom-0">
+        <Navfooter />
+      </div>
     </div>
   );
 };

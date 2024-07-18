@@ -7,17 +7,17 @@ const Footer = () => {
   const date = new Date();
   // let year = date.getFullYear();
   return (
-    <div className=" space-y-6 text-center mb-4 ">
+    <div className="space-y-6 text-center mb-4 ">
       <div className=" flex justify-center items-center text-center ">
         <div>
-          <img src="logo.png" alt="" className="h-36" />
+          <img src="logo.png" alt="" className="h-24 md:h-36" />
         </div>
-        <div className=" flex justify-center items-center font-bold text-4xl font-mono">
+        <div className=" flex justify-center items-center font-bold text-2xl md:text-4xl font-mono">
           pvs shopify
         </div>
       </div>
       <div>
-        <ul className="flex justify-center items-center space-x-4 ml-2">
+        <ul className="flex justify-center items-center space-x-4 ml-2 text-sm md:text-base ">
           <li>Company</li>
           <li>Products</li>
           <li>Offers</li>
@@ -26,9 +26,9 @@ const Footer = () => {
         </ul>
       </div>
       <div className="flex justify-center items-center space-x-6">
-        <img src={whats} alt="" />
-        <img src={insta} alt="" />
-        <img src={printrest} alt="" />
+        <img src={whats} alt="what's up" />
+        <img src={insta} alt="Insta" />
+        <img src={printrest} alt="Printrest" />
       </div>
       <div>Copyright &copy; {date.getFullYear()}</div>
     </div>

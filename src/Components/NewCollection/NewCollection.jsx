@@ -1,16 +1,14 @@
 import React from "react";
 import new_collection from "../Assets/new_collections";
 import { Link } from "react-router-dom";
-//import PopularCart from "../Popular/PopularCart";
 
 const NewCollection = () => {
-  //console.log(new_collection);
   return (
-    <div>
-      <div className=" text-center text-4xl font-bold underline">
+    <div className=" ">
+      <div className=" text-center text-4xl font-bold underline ">
         New Collection
       </div>
-      <div className=" grid grid-cols-4 space-y-10 ml-10 space-x-4">
+      <div className="flex  overflow-x-auto  md:grid md:grid-cols-4  space-y-10  space-x-2 ml-2 md:ml-10  mt-10  mb-10 h-96 md:h-full ">
         {new_collection.map((data) => {
           return (
             <Link
@@ -20,11 +18,11 @@ const NewCollection = () => {
               }}
               key={data.id}
             >
-              <div className="  bg-gradient-to-b from-purple-300 to-white text-black w-fit  rounded-2xl shadow-2xl  hover:scale-105 transition">
+              <div className="  bg-gradient-to-b from-purple-300 to-white text-black w-72  rounded-2xl shadow-2xl  hover:scale-105 transition ">
                 <div className="flex justify-center p-3 ">
                   <img
                     src={`${data.image}`}
-                    alt="hi"
+                    alt="No img"
                     className=" h-52 rounded-xl "
                   />
                 </div>

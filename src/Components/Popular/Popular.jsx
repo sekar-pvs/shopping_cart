@@ -7,15 +7,15 @@ const Popular = () => {
   return (
     <div className=" mt-7 ">
       <div className="space-y-7">
-        <div className="text-2xl uppercase flex justify-center items-center font-semibold underline">
+        <div className="text-2xl uppercase flex justify-center items-center  font-semibold underline">
           popular womens
         </div>
         {/*   <hr style={{ color: "red" }} /> */}
 
-        <div className="space-y-2 flex justify-center items-center space-x-2 ">
+        <div className="space-y-2 flex md:justify-center md:items-center items-center space-x-2 overflow-x-auto h-96  ">
           {data_product.map((data) => {
             return (
-              <div key={data.id}>
+              <div key={data.id} className="">
                 <Link
                   to={`/product/${data.id}`}
                   onClick={() => {

@@ -1,38 +1,55 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IoMdMan } from "react-icons/io";
-import { IoMdWoman } from "react-icons/io";
 import { TbMoodKidFilled } from "react-icons/tb";
-import { IoHome } from "react-icons/io5";
+import {
+  IoCartOutline,
+  IoHomeOutline,
+  IoManOutline,
+  IoWomanOutline,
+} from "react-icons/io5";
 
 const Navfooter = () => {
   return (
-    <footer className=" flex justify-around md:hidden p-3 ">
-      <Link to={`/`}>
-        <div>
-          <IoHome size={40} className="text-purple-600 " />
+    <footer className=" flex justify-around md:hidden p-3 bg-white">
+      <Link to={`/`} onClick={() => window.scroll(0, 0)}>
+        <div className="flex flex-col items-center justify-center">
+          <div>
+            <IoHomeOutline size={30} className="text-purple-500  " />
+          </div>
+          <div className="">Home</div>
         </div>
-        <div className="">Home</div>
       </Link>
-      <Link to={`/mens`}>
-        <div>
-          <IoMdMan size={40} className="text-purple-600 " />
+      <Link to={`/men`} onClick={() => window.scroll(0, 0)}>
+        <div className="flex flex-col items-center justify-center">
+          <div>
+            <IoManOutline size={30} className="text-purple-500 " />
+          </div>
+          <div className="">Men's</div>
         </div>
-        <div className="">Men's</div>
       </Link>
-      <Link to={`/womens`}>
-        {" "}
-        <div>
-          <IoMdWoman size={40} className="text-purple-600" />
+      <Link to={`/women`} onClick={() => window.scroll(0, 0)}>
+        <div className="flex flex-col items-center justify-center">
+          <div>
+            <IoWomanOutline size={30} className="text-purple-500" />
+          </div>
+          <div className="">Women's</div>
         </div>
-        <div className="">Women's</div>
       </Link>
-      <Link to={`/kids`}>
-        {" "}
-        <div>
-          <TbMoodKidFilled size={40} className="text-purple-600" />
+      <Link to={`/kid`} onClick={() => window.scroll(0, 0)}>
+        <div className="flex flex-col items-center justify-center">
+          <div className="text-center">
+            <TbMoodKidFilled size={30} className="text-purple-500 " />
+          </div>
+          <div className="text-center">Kid's</div>
         </div>
-        <div className="">Kid's</div>
+      </Link>
+      <Link to={`/cart`} onClick={() => window.scroll(0, 0)}>
+        <div className="flex flex-col items-center justify-center">
+          <div>
+            <IoCartOutline size={30} className="text-purple-500 " />
+          </div>
+          <div className="">cart</div>
+        </div>
       </Link>
     </footer>
   );

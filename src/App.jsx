@@ -16,33 +16,35 @@ import Order from "./Components/Order";
 
 const App = () => {
   return (
-    <div className="h-screen  ">
-      <Navbar />
+    <div className="relative">
+      <div className="h-full">
+        <div className="sticky top-0 z-10">
+          <Navbar />
+        </div>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/men"
-          element={<ShopCategori category="men" banner={menBanner} />}
-        />
-        <Route
-          path="/women"
-          element={<ShopCategori category="women" banner={womenBanner} />}
-        />
-        <Route
-          path="/kid"
-          element={<ShopCategori category="kid" banner={kidBanner} />}
-        />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/product" element={<Product />}>
-          <Route path=":productId" element={<Product />} />
-        </Route>
-        <Route path="/order" element={<Order />} />
-      </Routes>
-
-      <Navfooter />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/men"
+            element={<ShopCategori category="men" banner={menBanner} />}
+          />
+          <Route
+            path="/women"
+            element={<ShopCategori category="women" banner={womenBanner} />}
+          />
+          <Route
+            path="/kid"
+            element={<ShopCategori category="kid" banner={kidBanner} />}
+          />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/product" element={<Product />}>
+            <Route path=":productId" element={<Product />} />
+          </Route>
+          <Route path="/order" element={<Order />} />
+        </Routes>
+      </div>
     </div>
   );
 };

@@ -4,6 +4,8 @@ import BreadCrums from "./BreadCrums";
 import { ShopData } from "./Context/ShopContext";
 import ProductDisplay from "./ProductDisplay";
 import NewCollection from "./NewCollection/NewCollection";
+import Navfooter from "./Navfooter";
+import Footer from "./Footer";
 const Product = () => {
   const { data } = useContext(ShopData);
   const { productId } = useParams();
@@ -16,6 +18,10 @@ const Product = () => {
       <BreadCrums data={Product} />
       <ProductDisplay data={Product} />
       <NewCollection />
+      <Footer />
+      <div className="sticky bottom-0">
+        <Navfooter />
+      </div>
     </div>
   );
 };
