@@ -1,7 +1,6 @@
 import React from "react";
 //import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
-import Navfooter from "./Components/Navfooter";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./Components/Cart";
 import Login from "./Components/Login";
