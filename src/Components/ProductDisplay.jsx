@@ -4,14 +4,22 @@ import star from "./Assets/star_icon.png";
 import { ShopData } from "./Context/ShopContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const ProductDisplay = ({ data }) => {
-  const { cartItem, setCartItem, sizeBG, setSizeBg } = useContext(ShopData);
+  const { cartItem, setCartItem, sizeBG, setSizeBg, login } =
+    useContext(ShopData);
   const handelCartButton = () => {
-    window.scroll(0, 0);
-    setCartItem([...cartItem, data]);
-    toast.success("Sucessfully Added to Cart");
+    if (!login) {
+      navigate("/signup");
+    }
+    if (login) {
+      window.scroll(0, 0);
+      setCartItem([...cartItem, data]);
+      toast.success("Sucessfully Added to Cart");
+    }
   };
+  const navigate = useNavigate();
 
   //console.log(cartItem);
   return (
@@ -137,6 +145,7 @@ const ProductDisplay = ({ data }) => {
             </div>
           </div>
         </div>
+
         <div className="md:flex  justify-around space-x-5">
           <button
             className="booder-2 bg-orange-500 p-3 text-white font-bold  hover:scale-105 w-40 md:w-auto h-14"
@@ -151,9 +160,8 @@ const ProductDisplay = ({ data }) => {
           >
             Order Now
           </button>
-
-          <ToastContainer />
         </div>
+        <ToastContainer />
       </div>
     </div>
   );

@@ -1,12 +1,15 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ShopData } from "./Context/ShopContext";
 
 const Signup = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [Password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const { name, setName, email, setEmail, Password, setPassword, setLogin } =
+    useContext(ShopData);
+
   const handelName = (e) => {
     setName(e.target.value);
   };
@@ -20,10 +23,12 @@ const Signup = () => {
     if (name.length <= 0 || email.length <= 0 || Password.length <= 0) {
       toast.warning("Please fill all the box");
     } else {
-      toast.success("Sucessfully register");
-      setEmail("");
+      setLogin(true);
+      /*  setEmail("");
       setName("");
-      setPassword("");
+      setPassword(""); */
+      navigate("/");
+      toast.success("Sucessfully register");
     }
   };
   return (

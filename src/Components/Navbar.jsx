@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
+import { useContext } from "react";
+import { ShopData } from "./Context/ShopContext";
 
 const Navbar = () => {
   const [open] = useState(false);
   const [hr, setHr] = useState("home");
+  const { login, setLogin, name } = useContext(ShopData);
   /*  const handelButton = () => {
     setOpen(!open);
   }; */
+
+  const handelLogout = () => {
+    setLogin(false);
+  };
   return (
     <div className=" flex justify-around items-center m-1 bg-gradient-to-r from-white via-purple-500 to-pink-500 h-auto md:h-1/6 rounded">
       {/* This first div contain log and brand name  */}
@@ -50,7 +57,7 @@ const Navbar = () => {
                   }}
                 >
                   Men's
-                </button>{" "}
+                </button>
               </Link>
               {hr === "men" ? <hr /> : <></>}
             </li>
@@ -62,7 +69,7 @@ const Navbar = () => {
                   }}
                 >
                   Women's
-                </button>{" "}
+                </button>
               </Link>
               {hr === "women" ? <hr /> : <></>}
             </li>
@@ -91,18 +98,24 @@ const Navbar = () => {
                     </div>
                     <div>Cart</div>
                   </div>
-                </button>{" "}
+                </button>
               </Link>
               {hr === "cart" ? <hr /> : <></>}
             </li>
           </ul>
         </div>
       </div>
-      <div className="font-semibold text-sm md:text-xl border-2 border-double border-white p-1 rounded-full md:w-24 w-20 text-center hover:scale-105 transition ">
-        <Link to="/signup">
-          <button>Sign up</button>
-        </Link>
-      </div>
+      {!login ? (
+        <div className="font-semibold text-sm md:text-xl border-2 border-double border-white p-1 rounded-full md:w-24 w-20 text-center hover:scale-105 transition ">
+          <Link to="/signup">
+            <button>Sign up</button>
+          </Link>
+        </div>
+      ) : (
+        <div className="font-semibold text-xs md:text-xl border-2 border-double border-white p-1 rounded-full md:w-36 w-20 text-center hover:scale-105 transition">
+          <button onClick={handelLogout}>Logout {name}</button>
+        </div>
+      )}
     </div>
   );
 };

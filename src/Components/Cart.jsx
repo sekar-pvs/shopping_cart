@@ -11,7 +11,7 @@ const Cart = () => {
   const { cartItem, setCartItem } = useContext(ShopData);
   //console.log(cartItem);
   const handelCartRemove = (Id) => {
-    console.log(typeof Id);
+    // console.log(typeof Id);
 
     let removeCart = cartItem.filter((data) => Id !== data.id);
     setCartItem(removeCart);
@@ -29,8 +29,8 @@ const Cart = () => {
       <div className="space-y-10">
         {cartItem.length < 1 ? (
           <div className="flex justify-center items-center font-mono font-extrabold text-2xl md:text-4xl h-full p-5">
-            Your{" "}
-            <IoCartOutline size={50} className=" ml-3 mr-3 text-purple-600" />{" "}
+            Your
+            <IoCartOutline size={50} className=" ml-3 mr-3 text-purple-600" />
             is empty
           </div>
         ) : (

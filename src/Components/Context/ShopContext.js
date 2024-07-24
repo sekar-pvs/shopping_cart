@@ -11,9 +11,28 @@ const ShopContext = ({ children }) => {
   //console.log(cart);
   //Size variable to set background
   const [sizeBG, setSizeBg] = useState("");
+  // login value
+  const [login, setLogin] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
   return (
     <ShopData.Provider
-      value={{ data, cartItem, setCartItem, sizeBG, setSizeBg }}
+      value={{
+        data,
+        cartItem,
+        setCartItem,
+        sizeBG,
+        setSizeBg,
+        login,
+        setLogin,
+        name,
+        setName,
+        email,
+        setEmail,
+        Password,
+        setPassword,
+      }}
     >
       {children}
     </ShopData.Provider>
